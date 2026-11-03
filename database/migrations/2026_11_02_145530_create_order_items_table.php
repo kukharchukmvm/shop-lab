@@ -19,7 +19,7 @@ return new class extends Migration
                 ->constrained()
                 ->nullOnDelete();
             $table->string('name');
-            $table->string('quantity');
+            $table->unsignedInteger('quantity');
             $table->unsignedInteger('price');
             $table->timestamps();
         });

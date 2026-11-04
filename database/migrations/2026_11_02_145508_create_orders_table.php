@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->enum('status', ['pending', 'processing', 'delivered', 'cancelled'])->default('pending');
+            $table->foreignId('user_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();;
+            $table->string('status')->default('pending');
             $table->timestamps();
 
             $table->index('status');

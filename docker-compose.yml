@@ -15,7 +15,7 @@ services:
 
     mariadb:
 
-        image: mariadb:lts
+        image: mariadb:11.8
         environment:
             MARIADB_DATABASE: ${DB_DATABASE}
             MARIADB_USER: ${DB_USERNAME}
@@ -28,8 +28,6 @@ services:
 
     redis:
         image: redis:7-alpine
-        environment:
-            - REDIS_ARGS=--requirepass your_secure_password --appendonly yes
         volumes:
             -   redis_data:/data
         command: redis-server --requirepass ${REDIS_PASSWORD}

@@ -134,6 +134,9 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'notifier' => [
+            'path' => storage_path('logs/laravel.log'),
+        ]
 
     ],
 
